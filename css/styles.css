@@ -1,0 +1,72 @@
+.gameScreen {
+  height: 750px;
+  width: 100%;
+  border: solid 1px black;
+  position: relative;
+  margin: auto;
+}
+
+.score {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+}
+
+#ball {
+  width: 75px;
+  height: 75px;
+  border: solid 1px black;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+}
+
+.obstacle {
+  width: 50px;
+  border: solid 1px black;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-bottom: 0px;
+  animation: obstacle 5s infinite linear;
+}
+
+#first {
+  height: 100px;
+}
+
+#second {
+  height: 200px;
+  animation-delay: 2s;
+}
+
+#third {
+  height: 150px;
+  animation-delay: 3.5s;
+}
+
+.jump {
+  animation: jump .5s forwards linear;
+  animation-timing-function: ease-out;
+}
+
+.fall {
+  animation: fall .5s forwards linear;
+  animation-timing-function: ease-in;
+}
+
+@keyframes obstacle {
+  0%{}
+  100%{transform: translateX(-100vw);}
+}
+
+@keyframes jump {
+  0%{}
+  100%{bottom: 60%;}
+}
+
+@keyframes fall {
+  0%{bottom: 60%;}
+  100%{bottom: 0%;}
+}
